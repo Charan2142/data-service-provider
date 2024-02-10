@@ -1,109 +1,110 @@
 {
   "type": "object",
   "properties": {
-    "order_state": {
-      "enum": [
-        "BAP CONFIRMED",
-        "AWAITING BAP CONFIRMED"
-      ]
-    },
-    "order_items": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "store_front_product_id": {
-            "type": "string"
-          },
-          "quantity": {
-            "type": "integer"
-          },
-          "unit_price": {
-            "type": "integer"
-          },
-          "total_value": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "store_front_product_id",
-          "quantity",
-          "unit_price",
-          "total_value"
-        ]
-      }
-    },
-    "total_value": {
-      "type": "number"
-    },
-    "fulfilment_type": {
-      "enum": [
-        "SELF",
-        "BUYER",
-        "LOGISTICS"
-      ]
-    },
-    "buyer_details": {
+    "context": {
       "type": "object",
       "properties": {
-        "name": {
+        "transaction_id": {
           "type": "string"
         },
-        "mobile_number": {
+        "bap_uri": {
           "type": "string"
         },
-        "delivery_address": {
+        "city": {
+          "type": "string"
+        },
+        "ttl": {
+          "type": "string"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "bap_id": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "bpp_id": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "core_version": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "bpp_uri": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "transaction_id",
+        "bap_uri",
+        "city",
+        "ttl",
+        "message_id",
+        "bap_id",
+        "action",
+        "bpp_id",
+        "domain",
+        "core_version",
+        "timestamp",
+        "country",
+        "bpp_uri"
+      ]
+    },
+    "message": {
+      "type": "object",
+      "properties": {
+        "orderBook": {
           "type": "object",
           "properties": {
-            "address": {
-              "type": "string"
-            },
-            "pincode": {
-              "type": "integer"
+            "orders": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "store_front_product_id": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "unit_price": {
+                    "type": "number"
+                  },
+                  "total_value": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "store_front_product_id",
+                  "quantity",
+                  "unit_price",
+                  "total_value"
+                ]
+              }
             }
           },
           "required": [
-            "address",
-            "pincode"
+            "orders"
           ]
         }
       },
       "required": [
-        "name",
-        "mobile_number",
-        "delivery_address"
+        "orderBook"
       ]
-    },
-    "feedback": {
-      "type": "object",
-      "properties": {
-        "rating": {
-          "type": "integer"
-        },
-        "review": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "rating",
-        "review"
-      ]
-    },
-    "notes": {
-      "type": "string"
-    },
-    "order_id": {
-      "type": "string"
     }
   },
   "required": [
-    "order_state",
-    "order_items",
-    "total_value",
-    "fulfilment_type",
-    "buyer_details",
-    "feedback",
-    "notes",
-    "order_id"
+    "context",
+    "message"
   ]
 }
