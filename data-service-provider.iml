@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="BuildSystem">
+    <option name="buildSystemId" value="LEININGEN" />
+    <option name="displayName" value="data-service-provider:0.1.0-SNAPSHOT" />
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/dev-resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Leiningen: borkdude/dynaload:0.2.2" level="project" />
+    <orderEntry type="library" name="Leiningen: borkdude/edamame:0.0.19" level="project" />
+    <orderEntry type="library" name="Leiningen: cambium/cambium.core:1.1.1" level="project" />
+    <orderEntry type="library" name="Leiningen: cheshire:5.11.0" level="project" />
+    <orderEntry type="library" name="Leiningen: clj-http:3.12.3" level="project" />
+    <orderEntry type="library" name="Leiningen: clj-tuple:0.2.2" level="project" />
+    <orderEntry type="library" name="Leiningen: clout:2.2.1" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.core/jackson-core:2.13.3" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.dataformat/jackson-dataformat-cbor:2.13.3" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.dataformat/jackson-dataformat-smile:2.13.3" level="project" />
+    <orderEntry type="library" name="Leiningen: commons-codec:1.15" level="project" />
+    <orderEntry type="library" name="Leiningen: commons-io:2.15.0" level="project" />
+    <orderEntry type="library" name="Leiningen: commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Leiningen: compojure:1.7.1" level="project" />
+    <orderEntry type="library" name="Leiningen: criterium:0.4.6" level="project" />
+    <orderEntry type="library" name="Leiningen: crypto-equality:1.0.1" level="project" />
+    <orderEntry type="library" name="Leiningen: crypto-random:1.2.1" level="project" />
+    <orderEntry type="library" name="Leiningen: data-transformation:0.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Leiningen: fipp:0.6.25" level="project" />
+    <orderEntry type="library" name="Leiningen: instaparse:1.4.8" level="project" />
+    <orderEntry type="library" name="Leiningen: meander/epsilon:0.0.650" level="project" />
+    <orderEntry type="library" name="Leiningen: medley:1.4.0" level="project" />
+    <orderEntry type="library" name="Leiningen: metosin/malli:0.8.2" level="project" />
+    <orderEntry type="library" name="Leiningen: mvxcvi/arrangement:2.0.0" level="project" />
+    <orderEntry type="library" name="Leiningen: nrepl:1.0.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.commons/commons-fileupload2-core:2.0.0-M1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.httpcomponents/httpasyncclient:4.1.4" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.httpcomponents/httpclient-cache:4.5.13" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.httpcomponents/httpclient:4.5.13" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.httpcomponents/httpcore-nio:4.4.10" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.httpcomponents/httpcore:4.4.14" level="project" />
+    <orderEntry type="library" name="Leiningen: org.apache.httpcomponents/httpmime:4.5.13" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/clojure:1.10.3" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/core.async:1.6.673" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/core.cache:1.0.225" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/core.memoize:1.0.253" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/core.rrb-vector:0.1.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/core.specs.alpha:0.2.56" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/data.csv:1.0.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/data.priority-map:1.1.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/spec.alpha:0.2.194" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/test.check:1.1.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer.jvm:1.2.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer:1.1.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.logging:1.2.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.macro:0.1.5" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.reader:1.3.4" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.toolchain/jetty-jakarta-servlet-api:5.0.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.websocket/websocket-core-common:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.websocket/websocket-core-server:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.websocket/websocket-jetty-api:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.websocket/websocket-jetty-common:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.websocket/websocket-jetty-server:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty.websocket/websocket-servlet:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-http:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-io:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-security:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-server:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-servlet:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-util:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-webapp:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-xml:11.0.18" level="project" />
+    <orderEntry type="library" name="Leiningen: org.nrepl/incomplete:0.1.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.ow2.asm/asm:9.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.ring-clojure/ring-jakarta-servlet:1.11.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.ring-clojure/ring-websocket-protocols:1.11.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-api:2.0.5" level="project" />
+    <orderEntry type="library" name="Leiningen: potemkin:0.4.5" level="project" />
+    <orderEntry type="library" name="Leiningen: riddley:0.1.12" level="project" />
+    <orderEntry type="library" name="Leiningen: ring/ring-codec:1.2.0" level="project" />
+    <orderEntry type="library" name="Leiningen: ring/ring-core:1.11.0" level="project" />
+    <orderEntry type="library" name="Leiningen: ring/ring-jetty-adapter:1.11.0" level="project" />
+    <orderEntry type="library" name="Leiningen: slingshot:0.12.2" level="project" />
+    <orderEntry type="library" name="Leiningen: tigris:0.1.2" level="project" />
+    <orderEntry type="library" name="Leiningen: utility:0.1.0-SNAPSHOT" level="project" />
+  </component>
+</module>

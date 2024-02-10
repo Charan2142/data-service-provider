@@ -1,0 +1,12 @@
+{
+  "message": {
+    "ack": {
+      "status": "status"
+    }
+  },
+  "error": {
+    "code": "code",
+    "path": "path",
+    "message": "message"
+  }
+}

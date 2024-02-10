@@ -1,0 +1,8 @@
+{:demand-forecast
+ #(search %
+    {:orderBook
+     {:orders
+      (scan {:order_items ?order-items})
+      }}
+    {:orders ?order-items}
+    )}

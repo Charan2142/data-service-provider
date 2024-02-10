@@ -1,0 +1,56 @@
+[
+  {
+    "storeFrontProductId": "SF-PID1",
+    "totalPrice": 133,
+    "basePrice": 140,
+    "foreCastedDemand": 27
+  },
+  {
+    "storeFrontProductId": "SF-PID2",
+    "totalPrice": 202.5,
+    "basePrice": 210.6,
+    "foreCastedDemand": 36
+  },
+  {
+    "storeFrontProductId": "SF-PID3",
+    "totalPrice": 1008,
+    "basePrice": 1107,
+    "foreCastedDemand": 14
+  },
+  {
+    "storeFrontProductId": "SF-PID4",
+    "totalPrice": 505.9,
+    "basePrice": 510.4,
+    "foreCastedDemand": 8
+  },
+  {
+    "storeFrontProductId": "SF-PID5",
+    "totalPrice": 891.9,
+    "basePrice": 900,
+    "foreCastedDemand": 9
+  },
+  {
+    "storeFrontProductId": "SF-PID6",
+    "totalPrice": 321.6,
+    "basePrice": 330.6,
+    "foreCastedDemand": 45
+  },
+  {
+    "storeFrontProductId": "SF-PID7",
+    "totalPrice": 2223,
+    "basePrice": 2360,
+    "foreCastedDemand": 4
+  },
+  {
+    "storeFrontProductId": "SF-PID8",
+    "totalPrice": 78.3,
+    "basePrice": 90,
+    "foreCastedDemand": 54
+  },
+  {
+    "storeFrontProductId": "SF-PID9",
+    "totalPrice": 89.1,
+    "basePrice": 94.5,
+    "foreCastedDemand": 70
+  }
+]
