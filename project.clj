@@ -11,5 +11,11 @@
                  [metosin/malli "0.8.2"]
                  [clj-http "3.12.3"]
                  [meander/epsilon "0.0.650"]
-                 [data-transformation "0.1.0-SNAPSHOT"]]
+                 [data-transformation "0.1.0-SNAPSHOT"]
+                 [cambium/cambium.core "1.1.1"]
+                 [cambium/cambium.codec-simple "1.0.0"]
+                 [cambium/cambium.logback.core "0.4.6"]]
+
+  :aot :all
+
   :repl-options {:init-ns data-service-provider.core})

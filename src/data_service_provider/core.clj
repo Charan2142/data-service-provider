@@ -8,7 +8,8 @@
             [meander.epsilon :as meander]
             [data-transformation.cache :as cache]
             [data-transformation.transform :as dt]
-            [clj-http.client :as client]))
+            [clj-http.client :as client]
+            [cambium.core :as log]))
 
 (def analytics-schema (-> "./resources/specForBusinessIntelligence/demand-forecast-internal-model-schema.edn" slurp read-string))
 
@@ -23,11 +24,10 @@
 
 ;; Handler functions will return the response
 (defn data-load-handler [request]
-  (println "In data load of Data service provider")
+  (log/debug "In data load of Data service provider")
   (let [received-data (-> request :body slurp util/json->map)
-        _ (clojure.pprint/pprint received-data)
         schema-validation (validate-schema received-data)
-        _ (println "Schema validation " schema-validation)
+        ;_ (log/debug "Schema validation " schema-validation)
         request-body (slurp "./resources/processed-data.json")]
     (client/post "http://localhost:8081/on_data_load"
                  {:body   request-body
@@ -61,7 +61,7 @@
 (let [mapper-identifiers {"demand forecast" :demand-forecast}]
   (defn data-analytics-handler
     [request]
-    (println "In ingest data")
+    (log/debug "In ingest data")
     (let [request-data (some-> request :body slurp util/json->map)
           store-id (:storefrontId request-data)
           analytics-type (:analyticsType request-data)
@@ -97,7 +97,7 @@
 
 (defn get-store-front-orders-data
   [request]
-  (println "Retrieving store front orders data")
+  (log/debug "Retrieving store front orders data")
   (let [order-schema (-> "./resources/specSharedByDataServiceProviderForDataCollection/orders-schema.edn" slurp read-string m/schema)
         order-data (->> (reduce
                           (fn [agg _]
@@ -111,7 +111,7 @@
 
 (defn on-data-loader
   [request]
-  (println "In on data loader. seller app")
+  (log/debug "In on data loader. seller app")
   ;; get the analysed data from data load and will persist the data
   (let [analysed-data (-> request :body slurp)]
     (client/post "https://api.airtable.com/v0/appU8LVfAMVOsvArq/DemandForecast"
@@ -123,7 +123,7 @@
                                                                            (meander/scan {:storeFrontProductId ?id, :totalPrice ?tp, :basePrice ?bp, :foreCastedDemand ?fd})
                                                                            {:fields {:storeFrontProductId ?id, :totalPrice ?tp, :basePrice ?bp, :foreCastedDemand ?fd}}
                                                                            ))})})
-    (println "Sent analysed data to airtable")
+    (log/debug "Sent analysed data to airtable")
     {:status  200
      :headers {"Content-Type" "application/json"}
      :body    (-> {:ack {:message analysed-data}}
