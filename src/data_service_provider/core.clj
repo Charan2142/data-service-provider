@@ -10,11 +10,11 @@
             [data-transformation.transform :as dt]
             [clj-http.client :as client]))
 
-(def analytics-schema (-> "./resources/analytics-schema.edn" slurp read-string))
+(def analytics-schema (-> "./resources/specForBusinessIntelligence/demand-forecast-internal-model-schema.edn" slurp read-string))
 
 (defn- validate-schema
   ([payload]
-   (let [schema-id (get payload :analytics-type :default)]
+   (let [schema-id (get-in payload [:context :action] :default)]
      (validate-schema payload (keyword schema-id))))
   ([payload schema-id]
    (m/validate
@@ -25,13 +25,14 @@
 (defn data-load-handler [request]
   (println "In data load of Data service provider")
   (let [received-data (-> request :body slurp util/json->map)
+        _ (clojure.pprint/pprint received-data)
         schema-validation (validate-schema received-data)
         _ (println "Schema validation " schema-validation)
         request-body (slurp "./resources/processed-data.json")]
     (client/post "http://localhost:8081/on_data_load"
                  {:body   request-body
                   :accept :json})
-    ;; Throw error messages if schema validation fails
+    ;;TODO :  Throw error messages if schema validation fails
     #_(if true
         {:status  200
          :headers {"Content-Type" "application/json"}
@@ -54,8 +55,7 @@
   ([payload mapper-id]
    (let [ex-txf (-> payload (dt/execute-transformation mapper-id))
          transformed-data (apply merge-with into ex-txf)]
-     (-> {:analytics-type mapper-id}
-         (merge transformed-data)
+     (-> transformed-data
          util/map->json))))
 
 (let [mapper-identifiers {"demand forecast" :demand-forecast}]
@@ -98,7 +98,7 @@
 (defn get-store-front-orders-data
   [request]
   (println "Retrieving store front orders data")
-  (let [order-schema (-> "./resources/store-orders-schema.edn" slurp read-string m/schema)
+  (let [order-schema (-> "./resources/specSharedByDataServiceProviderForDataCollection/orders-schema.edn" slurp read-string m/schema)
         order-data (->> (reduce
                           (fn [agg _]
                             (conj agg (mg/generate order-schema)))
@@ -188,9 +188,10 @@
   (do
     (require '[malli.core :as m])
     (require '[malli.generator :as mg])
+    (require '[malli.json-schema :as json-schema])
     (require '[malli.provider :as mp]))
 
-  (def order-schema (-> "./resources/store-orders-schema.edn" slurp read-string m/schema))
+  (def order-schema (-> "./resources/specSharedByDataServiceProviderForDataCollection/orders-schema.edn" slurp read-string m/schema))
 
   (->> (reduce
          (fn [agg _]

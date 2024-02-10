@@ -1,8 +1,30 @@
 {:demand-forecast
  #(search %
+    ;; Input data format from the seller app
+    ;; Retrieved data from get store front order by store front id
     {:orderBook
      {:orders
-      (scan {:order_items ?order-items})
-      }}
-    {:orders ?order-items}
+      (scan {:order_items   ?order-items
+             :buyer_details ?buyer-details
+             :feedback      ?feedback})}}
+
+    ;; Output data ;; Adhering to BECKN protocol required by data service provider
+    {
+     ;; passing the entire context with action as demand-forecast
+     :context {:transaction_id "TXN-ID1"
+               :bap_uri        "https://abc.collectorapp.com"
+               :city           "std:080"
+               :ttl            "P3D"
+               :message_id     "M1"
+               :bap_id         "abc.collectorapp.com"
+               :action         "demand-forecast"
+               :bpp_id         "abc.data-service-provider.com"
+               :domain         "ONDC:NTS10"
+               :core_version   "1.0.0"
+               :timestamp      "2022-10-28T10:34:58.469Z"
+               :country        "IND"
+               :bpp_uri        "https://abc.data-service-provider.com"}
+     ;; takins only the required data for demand forecast from orders.
+     ;; filtering out the unnecessary data here from orders
+     :message {:orderBook {:orders ?order-items}}}
     )}

@@ -1,0 +1,26 @@
+{:demand-forecast [:map
+                   [:context
+                    [:map
+                     [:transaction_id string?]
+                     [:bap_uri string?]
+                     [:city string?]
+                     [:ttl string?]
+                     [:message_id string?]
+                     [:bap_id string?]
+                     [:action string?]
+                     [:bpp_id string?]
+                     [:domain string?]
+                     [:core_version string?]
+                     [:timestamp string?]
+                     [:country string?]
+                     [:bpp_uri string?]]]
+                   [:message
+                    [:map
+                     [:orderBook
+                      [:map
+                       [:orders
+                        [:vector [:map
+                                  [:store_front_product_id string?]
+                                  [:quantity int?]
+                                  [:unit_price number?]
+                                  [:total_value number?]]]]]]]]]}

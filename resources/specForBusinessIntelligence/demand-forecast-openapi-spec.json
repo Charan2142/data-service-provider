@@ -1,0 +1,26 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "storeFrontProductId": {
+        "type": "string"
+      },
+      "totalPrice": {
+        "type": "number"
+      },
+      "basePrice": {
+        "type": "number"
+      },
+      "foreCastedDemand": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "storeFrontProductId",
+      "totalPrice",
+      "basePrice",
+      "foreCastedDemand"
+    ]
+  }
+}

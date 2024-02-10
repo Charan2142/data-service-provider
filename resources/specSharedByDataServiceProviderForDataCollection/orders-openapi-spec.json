@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "properties": {
+    "order_state": {
+      "enum": [
+        "BAP CONFIRMED",
+        "AWAITING BAP CONFIRMED"
+      ]
+    },
+    "order_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "store_front_product_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "unit_price": {
+            "type": "integer"
+          },
+          "total_value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "store_front_product_id",
+          "quantity",
+          "unit_price",
+          "total_value"
+        ]
+      }
+    },
+    "total_value": {
+      "type": "number"
+    },
+    "fulfilment_type": {
+      "enum": [
+        "SELF",
+        "BUYER",
+        "LOGISTICS"
+      ]
+    },
+    "buyer_details": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "mobile_number": {
+          "type": "string"
+        },
+        "delivery_address": {
+          "type": "object",
+          "properties": {
+            "address": {
+              "type": "string"
+            },
+            "pincode": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "pincode"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "mobile_number",
+        "delivery_address"
+      ]
+    },
+    "feedback": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "integer"
+        },
+        "review": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "rating",
+        "review"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "order_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "order_state",
+    "order_items",
+    "total_value",
+    "fulfilment_type",
+    "buyer_details",
+    "feedback",
+    "notes",
+    "order_id"
+  ]
+}

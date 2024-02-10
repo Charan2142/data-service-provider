@@ -1,0 +1,6 @@
+[:vector
+ [:map
+  [:storeFrontProductId string?]
+  [:totalPrice number?]
+  [:basePrice number?]
+  [:foreCastedDemand int?]]]
